@@ -5,21 +5,21 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     id: 1,
-    image: "https://picsum.photos/1200/400?random=1",
-    title: "Bộ sưu tập mới",
-    subtitle: "Khám phá ngay hôm nay",
+    image: "https://cdn.hstatic.net/files/200000886795/file/web_pc.png",
+    title: "",
+    subtitle: "",
   },
   {
     id: 2,
-    image: "https://picsum.photos/1200/400?random=2",
-    title: "Giảm giá đến 50%",
-    subtitle: "Áp dụng cho tất cả sản phẩm",
+    image: "https://cdn.hstatic.net/files/200000887901/file/pc__1__75f287c1f544467cbce452977a7f3ef0.jpg",
+    title: "",
+    subtitle: "",
   },
   {
     id: 3,
-    image: "https://picsum.photos/1200/400?random=3",
-    title: "Free Ship toàn quốc",
-    subtitle: "Đơn hàng từ 299K",
+    image: "https://cdn.hstatic.net/files/200000887901/file/qtyn-desktop.jpg",
+    title: "",
+    subtitle: "",
   },
 ];
 
@@ -58,18 +58,8 @@ export default function BannerSlider() {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-[300px] md:h-[400px] object-cover"
+              className="w-full h-[300px] md:h-[500px] object-cover"
             />
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white text-center">
-              <h2 className="text-2xl md:text-4xl font-bold">
-                {slide.title}
-              </h2>
-              <p className="mt-2 text-sm md:text-lg">
-                {slide.subtitle}
-              </p>
-            </div>
           </div>
         ))}
       </div>

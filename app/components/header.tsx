@@ -13,7 +13,7 @@ export default function Header() {
           
           {/* Logo */}
           <Link href="/" className="text-xl font-bold">
-            MyShop
+            C4L
           </Link>
 
           {/* Menu Desktop */}

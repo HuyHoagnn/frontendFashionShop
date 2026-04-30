@@ -11,13 +11,15 @@ const slides = [
   },
   {
     id: 2,
-    image: "https://cdn.hstatic.net/files/200000887901/file/pc__1__75f287c1f544467cbce452977a7f3ef0.jpg",
+    image:
+      "https://cdn.hstatic.net/files/200000887901/file/pc__1__75f287c1f544467cbce452977a7f3ef0.jpg",
     title: "",
     subtitle: "",
   },
   {
     id: 3,
-    image: "https://cdn.hstatic.net/files/200000887901/file/qtyn-desktop.jpg",
+    image:
+      "https://cdn.hstatic.net/files/200000887901/file/qtyn-desktop.jpg",
     title: "",
     subtitle: "",
   },
@@ -26,12 +28,10 @@ const slides = [
 export default function BannerSlider() {
   const [current, setCurrent] = useState(0);
 
-  // Auto slide
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 4000);
-
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -44,50 +44,45 @@ export default function BannerSlider() {
   };
 
   return (
-    <div className="relative w-full h-[300px] md:h-[400px] overflow-hidden">
-      
+    <div className="relative w-full h-[400px] md:h-[520px] overflow-hidden">
       {/* Slides */}
       <div
-        className="flex transition-transform duration-500"
+        className="flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((slide) => (
           <div key={slide.id} className="w-full flex-shrink-0 relative">
-            
+
             {/* Image */}
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-[300px] md:h-[500px] object-cover"
+              className="w-full h-[400px] md:h-[520px] object-cover"
             />
+
+            {/* Content */}
+            <div className="absolute inset-0 flex flex-col justify-center items-start px-8 md:px-20 text-white max-w-2xl">
+              <h2 className="text-2xl md:text-5xl font-bold mb-4 tracking-wide">
+                {slide.title}
+              </h2>
+              <p className="text-sm md:text-lg mb-6 opacity-90">
+                {slide.subtitle}
+              </p>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Buttons */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full"
-      >
-        ❮
-      </button>
-
-      <button
-        onClick={nextSlide}
-        className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full"
-      >
-        ❯
-      </button>
-
       {/* Dots */}
-      <div className="absolute bottom-4 w-full flex justify-center gap-2">
+      <div className="absolute bottom-6 w-full flex justify-center gap-3">
         {slides.map((_, index) => (
           <div
             key={index}
             onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer ${
-              current === index ? "bg-white" : "bg-white/50"
-            }`}
+            className={`h-2 rounded-full cursor-pointer transition-all duration-300 ${current === index
+                ? "w-6 bg-white"
+                : "w-2 bg-white/50"
+              }`}
           />
         ))}
       </div>

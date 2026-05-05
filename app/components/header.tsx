@@ -19,7 +19,7 @@ export default function Header() {
           {/* Menu Desktop */}
           <nav className="hidden md:flex gap-6">
             <Link href="/" className="hover:text-blue-500">Trang chủ</Link>
-            <Link href="/products" className="hover:text-blue-500">Sản phẩm</Link>
+            <Link href="/sanpham" className="hover:text-blue-500">Sản phẩm</Link>
             <Link href="/about" className="hover:text-blue-500">Giới thiệu</Link>
             <Link href="/contact" className="hover:text-blue-500">Liên hệ</Link>
           </nav>
@@ -99,7 +99,7 @@ export default function Header() {
           
           <div className="flex flex-col gap-3 mt-3">
             <Link href="/" onClick={() => setOpen(false)}>Trang chủ</Link>
-            <Link href="/products" onClick={() => setOpen(false)}>Sản phẩm</Link>
+            <Link href="/sanpham" onClick={() => setOpen(false)}>Sản phẩm</Link>
             <Link href="/about" onClick={() => setOpen(false)}>Giới thiệu</Link>
             <Link href="/contact" onClick={() => setOpen(false)}>Liên hệ</Link>
           </div>

@@ -1,4 +1,5 @@
 import { Product } from "../types/types";
+import Link from "next/link";
 
 const ProductsCard = ({ product }: { product: Product }) => {
   const price = product.variants?.[0]?.price || 0;
@@ -24,9 +25,11 @@ const ProductsCard = ({ product }: { product: Product }) => {
         </p>
 
         {/* Product name */}
-        <p className="text-gray-500 text-sm line-clamp-1">
-          {product.name}
-        </p>
+        <Link href={`/sanpham/${product.slug}`}>
+          <p className="text-gray-500 text-sm line-clamp-1">
+            {product.name}
+          </p>
+        </Link>
 
         {/* Price */}
         <p className="text-lg font-semibold text-gray-900 pt-1">

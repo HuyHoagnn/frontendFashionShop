@@ -1,4 +1,5 @@
 "use client";
+// This component is a client component because it uses useState and useEffect
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
